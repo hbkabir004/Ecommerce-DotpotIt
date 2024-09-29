@@ -55,7 +55,7 @@ function FooterLinks() {
           </h3>
           <ul className="mt-4">
             {section.links.map((link, linkIndex) => (
-              <li key={linkIndex} className={linkIndex > 0 ? "mt-3" : ""}>
+              <li key={linkIndex} className={linkIndex > 0 ? "mt-2" : ""}>
                 <a href="/" className="hover:underline">
                   {link}
                 </a>
