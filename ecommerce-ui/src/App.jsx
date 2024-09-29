@@ -1,13 +1,16 @@
+import { Outlet } from "react-router-dom"
+import Footer from "./common/Footer"
+import Header from "./common/Header"
 
 
 function App() {
 
   return (
-    <div className="flex flex-col justify-center items-center mt-10">
-
-      <h1 className="text-3xl text-orange-500">Ecommerce-UI</h1>
-
-    </div>
+    <>
+      <Header />
+      <Outlet />
+      <Footer />
+    </>
   )
 }
 
