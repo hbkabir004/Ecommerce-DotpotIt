@@ -13,7 +13,7 @@ function NewsletterSignup() {
         </p>
       </div>
       <div className="flex flex-col">
-        <form className="flex gap-5 justify-between items-start pl-4 max-w-full text-sm tracking-tight bg-white rounded-lg border border-gray-300 border-solid shadow-[0px_1px_2px_rgba(0,0,0,0.047)] w-[418px]">
+        <form className="flex gap-5 justify-between items-start pl-4 max-w-full text-sm tracking-tight bg-white rounded-lg border border-gray-300 border-solid shadow-[0px_1px_2px_rgba(0,0,0,0.047)]">
           <div className="flex gap-1.5 my-auto text-gray-400">
             <img
               loading="lazy"
