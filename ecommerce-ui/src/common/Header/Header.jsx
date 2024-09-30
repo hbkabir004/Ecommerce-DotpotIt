@@ -1,13 +1,13 @@
 import React from 'react';
 import MainHeader from './MainHeader';
 import Navigation from './Navigation';
+import Notification from './Notification';
 import SubHeader from './SubHeader';
-import TopBanner from './TopBanner';
 
 const Header = () => {
     return (
         <>
-            <TopBanner />
+            <Notification />
             <SubHeader />
             <MainHeader />
             <Navigation />

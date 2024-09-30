@@ -1,13 +1,15 @@
 import { createBrowserRouter } from "react-router-dom";
-import App from '../App';
+import App from "../App";
+import LoginForm from "../components/LoginForm";
+import RegistrationForm from "../components/RegistrationForm";
 import HomePage from "../pages/HomePage";
-import MyAccountPage from "../pages/MyAccountPage";
 import NotFoundPage from "../pages/NotFoundPage";
 
 const Router = createBrowserRouter([
     {
         path: "/",
         element: <App />,
+
         children: [
             {
                 path: "/",
@@ -15,12 +17,16 @@ const Router = createBrowserRouter([
             },
             {
                 path: "myaccount",
-                element: <MyAccountPage />,
+                element: <RegistrationForm />,
             },
-            // {
-            //     path: "login",
-            //     element: <LoginPage />,
-            // },
+            {
+                path: "myaccount/login/myaccount",
+                element: <RegistrationForm />,
+            },
+            {
+                path: "myaccount/login",
+                element: <LoginForm />
+            },
             {
                 path: "*",
                 element: <NotFoundPage />

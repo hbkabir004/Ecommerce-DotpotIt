@@ -8,6 +8,25 @@ const Navigation = () => {
     <nav className="flex flex-col justify-center items-center px-16 py-px w-full tracking-tight bg-white max-md:px-5 max-md:max-w-full">
       <div className="flex flex-wrap gap-5 justify-between w-full max-w-[1360px] max-md:max-w-full">
         <div className="flex flex-wrap gap-6 text-base font-semibold leading-3 text-gray-950">
+
+          <button className="flex justify-around items-center z-10 px-2 my-2 rounded-lg border border-t border-r border-l">
+            <img
+              loading="lazy"
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/58257ba7021a55117883dea24848416e5a85a0d5f48abd7ad8e5d62c57352cf4?placeholderIfAbsent=true&apiKey=8da3fd6b121a4ce09e18e7d9dae826f0"
+              className="object-contain"
+              alt=""
+            />
+            <span className="ml-2 mr-10">
+              All Categories
+            </span>
+            <img
+              loading="lazy"
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/02faea6c017b1504331b25c4a25712e12d6b1bda78afe0b01f77c0f248568d72?placeholderIfAbsent=true&apiKey=8da3fd6b121a4ce09e18e7d9dae826f0"
+              className="object-contain"
+              alt=""
+            />
+          </button>
+
           <div className="flex gap-2 whitespace-nowrap">
             <a href="/" className="my-auto">
               Home

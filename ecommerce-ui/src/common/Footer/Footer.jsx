@@ -7,7 +7,7 @@ import NewsletterSignup from "./NewsletterSignup";
 import PaymentMethods from "./PaymentMethods";
 import SocialMedia from "./SocialMedia";
 
-function FooterPage() {
+function Footer() {
   return (
     <footer className="flex flex-col items-center px-20 pt-14 bg-gray-100 max-md:px-5">
       <div className="flex flex-col w-full max-w-[1360px] max-md:max-w-full">
@@ -29,4 +29,4 @@ function FooterPage() {
   );
 }
 
-export default FooterPage;
+export default Footer;

@@ -1,6 +1,6 @@
 import React from "react";
-import Breadcrumb from "../components/MyAccount/Breadcrumb";
-import RegistrationForm from "../components/MyAccount/RegistrationForm";
+import Breadcrumb from "../components/Breadcrumb";
+import RegistrationForm from "../components/RegistrationForm";
 
 function MyAccountPage() {
   return (
