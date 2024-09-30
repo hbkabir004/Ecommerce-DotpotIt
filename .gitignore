@@ -1,13 +1,13 @@
 # Node modules for both Client-side and Server-side
-/ecommerce-ui/node_modules/
+/ui/node_modules/
 /backend/node_modules/
 
 # Environment variable files for both Client-side and Server-side
-/ecommerce-ui/.env
+/ui/.env
 /backend/.env
 
 # Vercel Deployment files for both Client-side and Server-side
-/ecommerce-ui/.vercel
+/ui/.vercel
 /backend/.vercel
 /backend/vercel.json
 
@@ -19,9 +19,9 @@ yarn-debug.log*
 yarn-error.log*
 
 # Build output for Client-side
-/ecommerce-ui/build/
-/ecommerce-ui/dist/
-/ecommerce-ui/out/
+/ui/build/
+/ui/dist/
+/ui/out/
 
 # Dependency directories for Client-side (if using JSPM)
 frontend/jspm_packages/
