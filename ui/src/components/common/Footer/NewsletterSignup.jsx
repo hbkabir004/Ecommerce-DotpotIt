@@ -17,7 +17,7 @@ function NewsletterSignup() {
           <div className="flex gap-1.5 my-auto text-gray-400">
             <img
               loading="lazy"
-              src="/icons/form.svg"
+              src="/icons/footer-icons/form.svg"
               alt="form-svg"
               className="object-contain shrink-0 w-5 aspect-square"
             />

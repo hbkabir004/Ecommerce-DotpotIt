@@ -3,19 +3,19 @@ import React from "react";
 function SocialMedia() {
   const socialIcons = [
     {
-      src: "/icons/facebook.svg",
+      src: "/icons/footer-icons/facebook.svg",
       alt: "Facebook",
     },
     {
-      src: "/icons/twitter.svg",
+      src: "/icons/footer-icons/twitter.svg",
       alt: "Twitter",
     },
     {
-      src: "/icons/instagram.svg",
+      src: "/icons/footer-icons/instagram.svg",
       alt: "Instagram",
     },
     {
-      src: "/icons/linkedIn.svg",
+      src: "/icons/footer-icons/linkedIn.svg",
       alt: "LinkedIn",
     },
   ];

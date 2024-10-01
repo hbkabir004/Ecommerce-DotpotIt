@@ -14,13 +14,13 @@ function HelpSection() {
         <div className="flex flex-col self-start">
           <img
             loading="lazy"
-            src="/icons/call.svg"
+            src="/icons/footer-icons/call.svg"
             alt=""
             className="object-contain w-7 aspect-square mt-5"
           />
           <img
             loading="lazy"
-            src="/icons/form-black.svg"
+            src="/icons/footer-icons/form-black.svg"
             alt=""
             className="object-contain mt-12 w-7 aspect-square max-md:mt-10"
           />
