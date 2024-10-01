@@ -1,15 +1,15 @@
 # Node modules for both Client-side and Server-side
 /ui/node_modules/
-/backend/node_modules/
+/user-auth-backend/node_modules/
 
 # Environment variable files for both Client-side and Server-side
 /ui/.env
-/backend/.env
+/user-auth-backend/.env
 
 # Vercel Deployment files for both Client-side and Server-side
 /ui/.vercel
-/backend/.vercel
-/backend/vercel.json
+/user-auth-backend/.vercel
+/user-auth-backend/vercel.json
 
 # Logs
 /logs/

@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import FormInput from "./MyAccount/FormInput";
-import RadioButton from "./MyAccount/RadioButton";
+import FormInput from "../MyAccount/FormInput";
+import RadioButton from "../MyAccount/RadioButton";
 
 function RegistrationForm() {
   const formInputs = [
