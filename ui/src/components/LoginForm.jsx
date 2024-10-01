@@ -3,19 +3,20 @@ import { Link } from "react-router-dom";
 
 const LoginForm = () => {
   return (
-    <section className="flex flex-col items-center px-20 pt-28 pb-80 mt-6 border border-t max-md:px-5 max-md:py-24 max-md:max-w-full">
+    <section className="flex flex-col items-center px-20 pt-28 pb-60 mt-6 border border-t max-md:px-5 max-md:py-24 max-md:max-w-full">
       <div className="flex flex-col -mb-16 max-w-full w-[470px] max-md:mb-2.5">
         <div className="flex gap-8 self-center max-w-full text-3xl font-semibold whitespace-nowrap w-[209px]">
           <h1 className="text-gray-900">Login</h1>
-          <Link to="myaccount">
+          <Link to="/myaccount">
             <span className="grow shrink text-gray-400 w-[94px]">Register</span>
           </Link>
         </div>
+
         <p className="self-center mt-10 text-sm text-center text-gray-950">
           If you have an account, sign in with your username or email address.
         </p>
         <form>
-          <div className="mt-6">
+          <div className="mt-4">
             <label htmlFor="username" className="text-sm text-gray-950">
               Username or email address *
             </label>
@@ -26,7 +27,7 @@ const LoginForm = () => {
               required
             />
           </div>
-          <div className="mt-5">
+          <div className="mt-4">
             <label htmlFor="password" className="text-sm text-gray-950">
               Password *
             </label>

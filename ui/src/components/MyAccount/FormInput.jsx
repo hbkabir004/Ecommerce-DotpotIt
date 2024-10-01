@@ -5,7 +5,7 @@ function FormInput({ label, id, type = "text" }) {
     <>
       <label
         htmlFor={id}
-        className="self-start mt-6 text-sm tracking-tight text-gray-950"
+        className="self-start mt-4 text-sm tracking-tight text-gray-950"
       >
         {label}
       </label>

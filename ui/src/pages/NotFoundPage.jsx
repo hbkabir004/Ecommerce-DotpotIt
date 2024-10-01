@@ -1,13 +1,13 @@
 import React from "react";
 
-const NotFoundPage = () => {
+const ErrorPage = () => {
   return (
     <section className="flex flex-col items-center bg-white py-10 mb-10 max-md:pb-24">
       <div className="flex justify-center items-center">
         <img
           loading="lazy"
-          src="https://cdn.builder.io/api/v1/image/assets/TEMP/30f2f5167acb70aedb6bd98354cbb6508552de3fd0e764173ea4e9637e9a26e9?placeholderIfAbsent=true&apiKey=8da3fd6b121a4ce09e18e7d9dae826f0"
-          className="object-contain mt-24 max-w-full aspect-[2.32] w-[873px] max-md:mt-10"
+          src="/not-found.png"
+          className="object-contain mt-24 max-w-full aspect-[2.32] w-[700px] max-md:mt-10"
           alt="404 Not Found Illustration"
         />
       </div>
@@ -28,4 +28,4 @@ const NotFoundPage = () => {
   );
 };
 
-export default NotFoundPage;
+export default ErrorPage;

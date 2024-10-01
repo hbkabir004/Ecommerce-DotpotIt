@@ -11,7 +11,9 @@ function UserAccount() {
         className="object-contain shrink-0 self-start mt-1 aspect-square w-[26px]"
       />
       <div className="flex flex-col my-auto">
-        <div className="self-start text-xs">Sign In</div>
+        <Link to="/login">
+          <div className="self-start text-xs">Sign In</div>
+        </Link>
         <Link to="myaccount">
           <div className="text-sm font-medium">Account</div>
         </Link>

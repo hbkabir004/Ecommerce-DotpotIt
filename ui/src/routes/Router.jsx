@@ -3,13 +3,12 @@ import App from "../App";
 import LoginForm from "../components/LoginForm";
 import RegistrationForm from "../components/RegistrationForm";
 import HomePage from "../pages/HomePage";
-import NotFoundPage from "../pages/NotFoundPage";
+import ErrorPage from "../pages/NotFoundPage";
 
 const Router = createBrowserRouter([
     {
         path: "/",
         element: <App />,
-
         children: [
             {
                 path: "/",
@@ -20,16 +19,12 @@ const Router = createBrowserRouter([
                 element: <RegistrationForm />,
             },
             {
-                path: "myaccount/login/myaccount",
-                element: <RegistrationForm />,
-            },
-            {
-                path: "myaccount/login",
+                path: "login",
                 element: <LoginForm />
             },
             {
                 path: "*",
-                element: <NotFoundPage />
+                element: <ErrorPage />
             }
         ],
     },
