@@ -9,13 +9,15 @@ const TopBar = () => {
 
   return (
     <div className="flex flex-col justify-center items-center px-16 py-3.5 text-xs font-medium tracking-tight text-gray-500 bg-white border border-b max-md:px-5">
-      <div className="flex flex-wrap gap-5 justify-between w-full max-w-[1359px] max-md:max-w-full">
-        <nav className="flex gap-4">
-          {links.map((link, index) => (
-            <a key={index} href={link.url} className="my-auto">
-              {link.text}
-            </a>
-          ))}
+      <div className="flex flex-wrap gap-5 md:justify-between justify-center w-full max-w-[1359px] max-md:max-w-full">
+        <nav className="flex flex-col md:flex-row gap-2 md:gap-4">
+          <div className="flex flex-row justify-evenly md:gap-3 gap-0">
+            {links.map((link, index) => (
+              <a key={index} href={link.url} className="my-auto">
+                {link.text}
+              </a>
+            ))}
+          </div>
           <div className="px-4 py-0.5 border border-l">
             We deliver to you every day from{" "}
             <span className="font-bold text-orange-600">7:00 to 23:00</span>

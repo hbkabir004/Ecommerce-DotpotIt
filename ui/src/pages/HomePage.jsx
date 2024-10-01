@@ -6,7 +6,7 @@ import PromotionBanner from '../components/HomePage/PromotionBanner';
 
 const HomePage = () => {
     return (
-        <div className='mx-72'>
+        <div className='lg:mx-72 mx-2'>
             <HeroBanner />
             <PromotionSection />
             <FeatureList />
