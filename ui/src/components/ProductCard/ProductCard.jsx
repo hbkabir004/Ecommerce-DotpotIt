@@ -1,33 +1,49 @@
 import React from "react";
+import StarRating from "./StarRating";
 
 function ProductCard() {
   return (
-    <article className="flex overflow-hidden flex-col text-xs font-bold tracking-tight rounded-md max-w-[318px]">
-      <div className="flex overflow-hidden relative flex-col items-start pt-6 pr-16 pb-56 pl-5 w-full aspect-[0.801]">
-        <img
-          loading="lazy"
-          src="https://cdn.builder.io/api/v1/image/assets/TEMP/098fd18e45eaaa3c1f6b7e103a10564f10cc3cdae2d17ae87a8d1bf50f4f9059?placeholderIfAbsent=true&apiKey=8da3fd6b121a4ce09e18e7d9dae826f0"
-          alt=""
-          className="object-cover absolute inset-0 size-full"
-        />
-        <p className="relative font-medium text-orange-600">Only This Week</p>
-        <h2 className="relative mt-3.5 text-xl tracking-tighter text-gray-900">
-          Provides you experienced quality products
-        </h2>
-        <p className="relative mt-3.5 text-sm tracking-tight leading-normal text-gray-500">
-          Feed your family the best
-        </p>
-        <button className="flex relative gap-1.5 px-3.5 py-2.5 mt-5 mb-0 leading-4 text-center bg-white border border-solid rounded-[999px] text-neutral-800">
-          <span className="grow">{text}</span>
-          <img
-            loading="lazy"
-            src={iconSrc}
-            alt=""
-            className="object-contain shrink-0 w-5 aspect-[1.43]"
-          />
-        </button>
+    <div className="grid gap-8 lg:grid-cols-3 sm:max-w-sm sm:mx-auto lg:max-w-full">
+
+
+      <div className="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow">
+        <a href="#">
+          <img className="p-8 rounded-t-lg" src="/product-1.jpg" alt="product image" />
+        </a>
+        <div className="px-5 pb-5">
+          <a href="#">
+            <h5 className="text-xl font-semibold tracking-tight text-gray-900">Apple Watch Series 7 GPS, Aluminium Case, Starlight Sport</h5>
+          </a>
+          <div className="flex items-center mt-2.5 mb-5">
+            {/* <div className="flex items-center space-x-1 rtl:space-x-reverse">
+              <svg className="w-4 h-4 text-yellow-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+              </svg>
+              <svg className="w-4 h-4 text-yellow-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+              </svg>
+              <svg className="w-4 h-4 text-yellow-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+              </svg>
+              <svg className="w-4 h-4 text-yellow-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+              </svg>
+              <svg className="w-4 h-4 text-gray-200" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+              </svg>
+            </div> */}
+            <StarRating />
+            <span className="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded ms-3">5.0</span>
+          </div>
+          <div className="flex items-center justify-between">
+            <span className="text-3xl font-bold text-gray-900">$599</span>
+            <a href="#" className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">Add to cart</a>
+          </div>
+        </div>
       </div>
-    </article>
+
+    </div>
+
   );
 }
 

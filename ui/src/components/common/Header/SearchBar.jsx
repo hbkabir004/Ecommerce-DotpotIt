@@ -12,7 +12,7 @@ function SearchBar() {
       <button aria-label="Search">
         <img
           loading="lazy"
-          src="https://cdn.builder.io/api/v1/image/assets/TEMP/2b7dad36f28e9ab4611feb869b90b5d0a9235417a3fd92064ddb8234952a0363?placeholderIfAbsent=true&apiKey=8da3fd6b121a4ce09e18e7d9dae826f0"
+          src="icons/search-icon.svg"
           alt=""
           className="object-contain shrink-0 aspect-square w-[26px]"
         />

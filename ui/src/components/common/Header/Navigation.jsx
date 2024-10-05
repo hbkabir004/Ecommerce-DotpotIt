@@ -9,7 +9,7 @@ const Navigation = () => {
           <button className="flex justify-around items-center z-10 px-2 my-2 rounded-lg border border-t border-r border-l">
             <img
               loading="lazy"
-              src="https://cdn.builder.io/api/v1/image/assets/TEMP/58257ba7021a55117883dea24848416e5a85a0d5f48abd7ad8e5d62c57352cf4?placeholderIfAbsent=true&apiKey=8da3fd6b121a4ce09e18e7d9dae826f0"
+              src="/icons/category-icon.svg"
               className="object-contain"
               alt=""
             />
@@ -18,7 +18,7 @@ const Navigation = () => {
             </span>
             <img
               loading="lazy"
-              src="https://cdn.builder.io/api/v1/image/assets/TEMP/02faea6c017b1504331b25c4a25712e12d6b1bda78afe0b01f77c0f248568d72?placeholderIfAbsent=true&apiKey=8da3fd6b121a4ce09e18e7d9dae826f0"
+              src="/icons/dropdown-icon.svg"
               className="object-contain"
               alt=""
             />
@@ -30,7 +30,7 @@ const Navigation = () => {
             </a>
             <img
               loading="lazy"
-              src="https://cdn.builder.io/api/v1/image/assets/TEMP/232cf632bb52b42e22986e9263b84dab5dd256297d414b05c56c60c7b825c7ea?placeholderIfAbsent=true&apiKey=8da3fd6b121a4ce09e18e7d9dae826f0"
+              src="/icons/dropdown-icon.svg"
               className="object-contain shrink-0 w-2.5 aspect-[0.21]"
               alt=""
             />
@@ -41,7 +41,7 @@ const Navigation = () => {
             </a>
             <img
               loading="lazy"
-              src="https://cdn.builder.io/api/v1/image/assets/TEMP/94eb986feed028d627debfda425197ac7c570c3215cc776d41844184b697610f?placeholderIfAbsent=true&apiKey=8da3fd6b121a4ce09e18e7d9dae826f0"
+              src="/icons/dropdown-icon.svg"
               className="object-contain shrink-0 aspect-[0.19] w-[9px]"
               alt=""
             />
@@ -60,7 +60,7 @@ const Navigation = () => {
             <span className="grow my-auto">Trending Products</span>
             <img
               loading="lazy"
-              src="https://cdn.builder.io/api/v1/image/assets/TEMP/022d20f8b35b959dae8bb11fbac10a7497a92c4eee6c29df26c10a7a34b5a6aa?placeholderIfAbsent=true&apiKey=8da3fd6b121a4ce09e18e7d9dae826f0"
+              src="/icons/dropdown-icon.svg"
               className="object-contain shrink-0 w-2.5 aspect-[0.21]"
               alt=""
             />
@@ -69,12 +69,12 @@ const Navigation = () => {
             <span className="grow self-stretch my-auto text-base font-semibold leading-3 text-red-600">
               Almost Finished
             </span>
-            <span className="self-stretch px-2 py-1.5 my-auto text-xs font-bold leading-none text-center text-white whitespace-nowrap rounded">
+            <span className="self-stretch px-2 py-1.5 my-auto text-xs font-bold leading-none text-center bg-orange-600 text-white whitespace-nowrap rounded">
               SALE
             </span>
             <img
               loading="lazy"
-              src="https://cdn.builder.io/api/v1/image/assets/TEMP/d0d7f991b7c64d2f189c5be4a082df49f0d19ff57094c107c0da07a067c75f6f?placeholderIfAbsent=true&apiKey=8da3fd6b121a4ce09e18e7d9dae826f0"
+              src="/icons/dropdown-icon.svg"
               className="object-contain shrink-0 self-stretch w-2.5 aspect-[0.21]"
               alt=""
             />

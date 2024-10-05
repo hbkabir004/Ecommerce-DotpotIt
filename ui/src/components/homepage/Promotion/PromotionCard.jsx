@@ -25,7 +25,7 @@ function PromotionCard({ title, subtitle, description, imageSrc, buttonText }) {
         <span className="grow">{buttonText}</span>
         <img
           loading="lazy"
-          src="https://cdn.builder.io/api/v1/image/assets/TEMP/7617b1dc840862ef77b29ee335526091f13b3d72b2a3174eab974bcd70b281f9?placeholderIfAbsent=true&apiKey=8da3fd6b121a4ce09e18e7d9dae826f0"
+          src="/icons/checkout-icons/right-arrow.svg"
           alt=""
           className="object-contain shrink-0 w-5 aspect-[1.43]"
         />

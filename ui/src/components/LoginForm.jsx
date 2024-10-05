@@ -1,7 +1,35 @@
-import React from "react";
+import axios from "axios";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 const LoginForm = () => {
+  const [formData, setFormData] = useState({
+    username: "",
+    password: ""
+  });
+
+  const [error, setError] = useState("");
+  const [success, setSuccess] = useState("");
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.id]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setError("");
+    setSuccess("");
+
+    try {
+      const response = await axios.post("http://localhost:5000/api/login", formData);
+      const token = response.data.token;
+      localStorage.setItem("authToken", token);  // Save JWT to localStorage
+      setSuccess("Logged in successfully");
+    } catch (err) {
+      setError(err.response.data.message || "Invalid credentials");
+    }
+  };
+
   return (
     <section className="flex flex-col items-center px-20 pt-24 pb-60 border border-t max-md:px-5 max-md:py-24 max-md:max-w-full">
       <div className="flex flex-col -mb-16 max-w-full w-[470px] max-md:mb-2.5">
@@ -13,9 +41,9 @@ const LoginForm = () => {
         </div>
 
         <p className="self-center mt-10 text-sm text-center text-gray-950">
-          If you have an account, sign in with your username or email address.
+          If you have an account, sign in...
         </p>
-        <form>
+        <form onSubmit={handleSubmit}>
           <div className="mt-4">
             <label htmlFor="username" className="text-sm text-gray-950">
               Username or email address *
@@ -25,6 +53,7 @@ const LoginForm = () => {
               id="username"
               className="flex shrink-0 mt-3 bg-white rounded-lg border border-gray-300 border-solid h-[42px] shadow-[0px_1px_2px_rgba(0,0,0,0.047)] max-md:max-w-full w-full"
               required
+              onChange={handleChange}
             />
           </div>
           <div className="mt-4">
@@ -36,23 +65,16 @@ const LoginForm = () => {
               id="password"
               className="flex shrink-0 mt-3 bg-white rounded-lg border border-gray-300 border-solid h-[42px] shadow-[0px_1px_2px_rgba(0,0,0,0.047)] max-md:max-w-full w-full"
               required
+              onChange={handleChange}
             />
           </div>
-          <div className="flex gap-10 mt-4 w-full max-md:max-w-full">
-            <label className="flex flex-1 gap-2.5 text-xs text-gray-950">
-              <input
-                type="checkbox"
-                className="shrink-0 w-4 h-4 bg-white rounded border border-gray-300 border-solid shadow-[0px_1px_2px_rgba(0,0,0,0.047)]"
-              />
-              <span className="my-auto">Remember me</span>
-            </label>
-            <a href="#" className="text-sm text-blue-700">
-              Lost your password?
-            </a>
-          </div>
+
+          {error && <div className="text-red-500">{error}</div>}
+          {success && <div className="text-green-500">{success}</div>}
+
           <button
             type="submit"
-            className="px-12 py-4 mt-6 text-sm font-bold tracking-tight leading-3 text-center text-white bg-purple-800 rounded-lg max-md:px-5 max-md:max-w-full w-full"
+            className="px-12 py-4 mt-6 text-sm font-bold tracking-tight leading-3 text-center text-white bg-purple-800 rounded-lg w-full"
           >
             Log in
           </button>

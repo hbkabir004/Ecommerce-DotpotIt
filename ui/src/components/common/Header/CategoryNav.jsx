@@ -8,7 +8,7 @@ const CategoryNav = () => (
             <button className="flex z-10 gap-3.5 px-5 py-4 rounded-lg border border-t border-r border-l">
               <img
                 loading="lazy"
-                src="https://cdn.builder.io/api/v1/image/assets/TEMP/58257ba7021a55117883dea24848416e5a85a0d5f48abd7ad8e5d62c57352cf4?placeholderIfAbsent=true&apiKey=8da3fd6b121a4ce09e18e7d9dae826f0"
+                src="/icons/category-icon"
                 className="object-contain shrink-0 aspect-[1.22] w-[22px]"
                 alt=""
               />
@@ -18,7 +18,7 @@ const CategoryNav = () => (
             </button>
             <img
               loading="lazy"
-              src="https://cdn.builder.io/api/v1/image/assets/TEMP/02faea6c017b1504331b25c4a25712e12d6b1bda78afe0b01f77c0f248568d72?placeholderIfAbsent=true&apiKey=8da3fd6b121a4ce09e18e7d9dae826f0"
+              src="/icons/dropdown-icon"
               className="object-contain self-end mt-0 w-2.5 aspect-[0.21] max-md:mr-2.5"
               alt=""
             />
@@ -31,7 +31,7 @@ const CategoryNav = () => (
               <span className="my-auto">Home</span>
               <img
                 loading="lazy"
-                src="https://cdn.builder.io/api/v1/image/assets/TEMP/bd5b7a5ac3c1cbdf8bcb4a1077891019695c8e41ee0ff22870b4b00cbbee7141?placeholderIfAbsent=true&apiKey=8da3fd6b121a4ce09e18e7d9dae826f0"
+                src="/icons/dropdown-icon"
                 className="object-contain shrink-0 w-2.5 aspect-[0.21]"
                 alt=""
               />
@@ -42,7 +42,7 @@ const CategoryNav = () => (
             <span className="my-auto">Shop</span>
             <img
               loading="lazy"
-              src="https://cdn.builder.io/api/v1/image/assets/TEMP/90ba23c7bf05921254e026dbea8ff9087804850ea3b9185c1912eeb25ed200be?placeholderIfAbsent=true&apiKey=8da3fd6b121a4ce09e18e7d9dae826f0"
+              src="/icons/dropdown-icon"
               className="object-contain shrink-0 aspect-[0.19] w-[9px]"
               alt=""
             />
@@ -59,7 +59,7 @@ const CategoryNav = () => (
             <span className="grow my-auto">Trending Products</span>
             <img
               loading="lazy"
-              src="https://cdn.builder.io/api/v1/image/assets/TEMP/f153f27fb2fdc5617357987f4c15d5abcb4ebc901df4e7ab176bc4698c356908?placeholderIfAbsent=true&apiKey=8da3fd6b121a4ce09e18e7d9dae826f0"
+              src="/icons/dropdown-icon"
               className="object-contain shrink-0 w-2.5 aspect-[0.21]"
               alt=""
             />
@@ -68,12 +68,12 @@ const CategoryNav = () => (
             <span className="grow self-stretch my-auto text-base font-semibold leading-3 text-red-600">
               Almost Finished
             </span>
-            <span className="self-stretch px-2 py-1.5 my-auto text-xs font-bold leading-none text-center text-white whitespace-nowrap rounded">
+            <span className="self-stretch px-2 py-1.5 my-auto text-xs font-bold leading-none text-center bg-orange-500 text-white whitespace-nowrap rounded">
               SALE
             </span>
             <img
               loading="lazy"
-              src="https://cdn.builder.io/api/v1/image/assets/TEMP/e61d19d59ead7a9eedd46b42023bcbd06b762891b71bcf67bb8ef476eef75e3c?placeholderIfAbsent=true&apiKey=8da3fd6b121a4ce09e18e7d9dae826f0"
+              src="/icons/dropdown-icon"
               className="object-contain shrink-0 self-stretch w-2.5 aspect-[0.21]"
               alt=""
             />
