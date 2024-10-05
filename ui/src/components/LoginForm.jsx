@@ -21,7 +21,7 @@ const LoginForm = () => {
     setSuccess("");
 
     try {
-      const response = await axios.post("http://localhost:5000/api/login", formData);
+      const response = await axios.post("http://localhost:5000/user/login", formData);
       const token = response.data.token;
       localStorage.setItem("authToken", token);  // Save JWT to localStorage
       setSuccess("Logged in successfully");

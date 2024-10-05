@@ -39,14 +39,12 @@ function RegistrationForm() {
         password: e.target.password.value,
       };
 
-      const response = await axios.post("http://localhost:5000/api/register", formData);
+      const response = await axios.post("http://localhost:5000/user/register", formData);
       console.log(response.data);  // Success response
     } catch (err) {
       console.error('Error in registration:', err.response ? err.response.data : err.message);
     }
   };
-
-
 
   return (
     <div className="flex flex-col items-center px-20 pt-24 pb-60 border border-t max-md:px-5 max-md:py-24 max-md:max-w-full">
