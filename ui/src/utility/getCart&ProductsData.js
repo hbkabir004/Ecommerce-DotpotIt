@@ -4,7 +4,7 @@ import { getStoredCart } from './fakeDB';
 export const productsAndCartData = async () => {
   // const [query, setQuery] = useContext(QueryContext);
   // Fetching Data from APIs
-  const productsData = await axios.get(`https://mrittik-server.vercel.app/products/`)
+  const productsData = await axios.get(`http://localhost:5000/products`)
 
   // Fetching Data from JSON (Local)
   // const productsData = await fetch('data/products.json')
