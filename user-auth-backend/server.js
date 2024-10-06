@@ -13,7 +13,7 @@ app.use(express.json());
 
 connectDB();
 
-app.use('/user', userRoutes);
+app.use('/api', userRoutes);
 app.use('/products', productRoutes)
 
 // Default route to handle favicon.ico
