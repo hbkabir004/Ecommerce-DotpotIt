@@ -1,18 +1,17 @@
 import axios from "axios";
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { toast } from 'react-hot-toast'; // Import react-hot-toast
+import { Link, useNavigate } from "react-router-dom";
 import FormInput from "./MyAccount/FormInput";
 import RadioButton from "./MyAccount/RadioButton";
 
 function RegistrationForm() {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     username: "",
     email: "",
     password: "",
   });
-
-  const [error, setError] = useState("");
-  const [success, setSuccess] = useState("");
 
   const formInputs = [
     { label: "Username *", id: "username" },
@@ -40,15 +39,19 @@ function RegistrationForm() {
       };
 
       const response = await axios.post("http://localhost:5000/api/register", formData);
-      console.log(response.data);  // Success response
+      toast.success(`${response?.data?.message} Redirecting to login...`, { duration: 2000 });
+      // Redirect to the login page after 2 seconds
+      setTimeout(() => navigate('/login'), 2000);
+
     } catch (err) {
-      console.error('Error in registration:', err.response ? err.response.data : err.message);
+      const errorMessage = err.response ? err.response.data : err.message;
+      toast.error(`${errorMessage.message}`); // Show error toast
     }
   };
 
   return (
     <div className="flex flex-col items-center px-20 pt-24 pb-60 border border-t max-md:px-5 max-md:py-24 max-md:max-w-full">
-      <form className="flex flex-col mb-0 max-w-full w-[470px] max-md:mb-2.5" onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className="flex flex-col mb-0 max-w-full w-[470px] max-md:mb-2.5">
         <div className="flex gap-8 self-center max-w-full text-3xl font-semibold tracking-tight whitespace-nowrap w-[209px]">
           <Link to="/login">
             <div className="text-gray-400">Login</div>
@@ -68,9 +71,6 @@ function RegistrationForm() {
         <p className="mt-7 text-sm tracking-tight leading-5 text-gray-950 max-md:max-w-full">
           Your personal data will be used...
         </p>
-
-        {error && <div className="text-red-500">{error}</div>}
-        {success && <div className="text-green-500">{success}</div>}
 
         <button className="px-12 py-4 mt-9 text-sm font-bold tracking-tight leading-3 text-center text-white whitespace-nowrap bg-purple-800 rounded-lg max-md:px-5 max-md:max-w-full">
           Register

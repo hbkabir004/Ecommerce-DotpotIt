@@ -1,4 +1,5 @@
 import { createContext, useEffect, useState } from "react";
+import { Toaster } from 'react-hot-toast';
 import { Outlet, useLoaderData } from "react-router-dom";
 import Footer from "./components/common/Footer/Footer";
 import Header from "./components/common/Header/Header";
@@ -23,6 +24,10 @@ function App() {
   return (
     <ProductContext.Provider value={products}>
       <CartContext.Provider value={[cart, setCart]}>
+        <Toaster
+          position="top-center"
+          reverseOrder={false}
+        />
         <Header />
         <Outlet />
         <Footer />

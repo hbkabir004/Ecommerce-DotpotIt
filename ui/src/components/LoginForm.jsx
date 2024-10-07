@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import toast, { Toaster } from "react-hot-toast";
+import { Link, useNavigate } from "react-router-dom";
 
 const LoginForm = () => {
   const [formData, setFormData] = useState({
@@ -8,8 +9,7 @@ const LoginForm = () => {
     password: ""
   });
 
-  const [error, setError] = useState("");
-  const [success, setSuccess] = useState("");
+  const navigate = useNavigate(); // React Router's navigation hook
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.id]: e.target.value });
@@ -17,19 +17,23 @@ const LoginForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setError("");
-    setSuccess("");
 
     try {
       const response = await axios.post("http://localhost:5000/api/login", formData);
-      setSuccess("Logged in successfully");
+
+      if (response.status === 200) { // Assuming 200 OK status for successful login
+        toast.success("Logged in successfully! Redirecting to homepage...");
+        setTimeout(() => navigate("/"), 2000); // Redirect to homepage after 2 seconds
+      }
     } catch (err) {
-      setError(err.response.data.message || "Invalid credentials");
+      const errorMessage = err.response?.data?.message || "Invalid credentials. Please try again.";
+      toast.error(errorMessage);
     }
   };
 
   return (
     <section className="flex flex-col items-center px-20 pt-24 pb-60 border border-t max-md:px-5 max-md:py-24 max-md:max-w-full">
+      <Toaster /> {/* This will display the toasts */}
       <div className="flex flex-col -mb-16 max-w-full w-[470px] max-md:mb-2.5">
         <div className="flex gap-8 self-center max-w-full text-3xl font-semibold whitespace-nowrap w-[209px]">
           <h1 className="text-gray-900">Login</h1>
@@ -66,9 +70,6 @@ const LoginForm = () => {
               onChange={handleChange}
             />
           </div>
-
-          {error && <div className="text-red-500">{error}</div>}
-          {success && <div className="text-green-500">{success}</div>}
 
           <button
             type="submit"
