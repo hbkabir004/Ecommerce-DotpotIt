@@ -38,7 +38,7 @@ function RegistrationForm() {
         password: e.target.password.value,
       };
 
-      const response = await axios.post("http://localhost:5000/api/register", formData);
+      const response = await axios.post("https://dotpot-user-auth.vercel.app/api/register", formData);
       toast.success(`${response?.data?.message} Redirecting to login...`, { duration: 2000 });
       // Redirect to the login page after 2 seconds
       setTimeout(() => navigate('/login'), 2000);

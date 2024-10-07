@@ -19,7 +19,7 @@ const LoginForm = () => {
     e.preventDefault();
 
     try {
-      const response = await axios.post("http://localhost:5000/api/login", formData);
+      const response = await axios.post("https://dotpot-user-auth.vercel.app/api/login", formData);
 
       if (response.status === 200) { // Assuming 200 OK status for successful login
         toast.success("Logged in successfully! Redirecting to homepage...");
