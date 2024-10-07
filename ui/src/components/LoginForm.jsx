@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const LoginForm = () => {
   const [formData, setFormData] = useState({
-    username: "",
+    email: "",
     password: ""
   });
 
@@ -21,9 +21,7 @@ const LoginForm = () => {
     setSuccess("");
 
     try {
-      const response = await axios.post("http://localhost:5000/user/login", formData);
-      const token = response.data.token;
-      localStorage.setItem("authToken", token);  // Save JWT to localStorage
+      const response = await axios.post("http://localhost:5000/api/login", formData);
       setSuccess("Logged in successfully");
     } catch (err) {
       setError(err.response.data.message || "Invalid credentials");
@@ -45,12 +43,12 @@ const LoginForm = () => {
         </p>
         <form onSubmit={handleSubmit}>
           <div className="mt-4">
-            <label htmlFor="username" className="text-sm text-gray-950">
-              Username or email address *
+            <label htmlFor="email" className="text-sm text-gray-950">
+              Email address *
             </label>
             <input
-              type="text"
-              id="username"
+              type="email"
+              id="email"
               className="flex shrink-0 mt-3 bg-white rounded-lg border border-gray-300 border-solid h-[42px] shadow-[0px_1px_2px_rgba(0,0,0,0.047)] max-md:max-w-full w-full"
               required
               onChange={handleChange}

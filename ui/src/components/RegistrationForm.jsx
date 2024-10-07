@@ -39,7 +39,7 @@ function RegistrationForm() {
         password: e.target.password.value,
       };
 
-      const response = await axios.post("http://localhost:5000/user/register", formData);
+      const response = await axios.post("http://localhost:5000/api/register", formData);
       console.log(response.data);  // Success response
     } catch (err) {
       console.error('Error in registration:', err.response ? err.response.data : err.message);
