@@ -1,9 +1,11 @@
 import React from "react";
+import { Toaster } from "react-hot-toast";
 import StarRating from "./StarRating";
 
 const ProductCard = ({ productItem, handleAddToCart }) => {
 
   const { image, discount, icon, name, rating, originalPrice, discountedPrice } = productItem;
+  // const notify = toast
 
   return (
     <div className="flex flex-col items-start px-4 pb-4 w-full border border-r max-md:mt-4 rounded-xl">
@@ -41,7 +43,7 @@ const ProductCard = ({ productItem, handleAddToCart }) => {
         <div className="grow text-2xl font-bold text-red-600">
           ${discountedPrice}
         </div>
-        <div className="text-base font-medium text-gray-900">
+        <div className="text-lg font-medium text-gray-900 line-through ml-2">
           ${originalPrice}
         </div>
       </div>
@@ -49,15 +51,16 @@ const ProductCard = ({ productItem, handleAddToCart }) => {
       {/* Add to Cart button */}
       <button
         onClick={() => handleAddToCart(productItem)}
-        className="flex overflow-hidden gap-5 justify-between self-stretch px-3.5 py-2.5 mt-3.5 text-sm font-medium tracking-tight leading-3 text-purple-800 border border-purple-800 border-solid rounded-[999px]">
+        className="flex overflow-hidden gap-5 justify-between self-stretch px-3.5 py-2.5 mt-3.5 text-sm font-semibold tracking-tight leading-3 text-purple-800 border border-purple-800 border-solid rounded-[999px] hover:bg-purple-600 hover:text-white">
         <span className="my-auto">Add to cart</span>
         <img
           loading="lazy"
-          src="https://cdn.builder.io/api/v1/image/assets/TEMP/43e16c279a7cbc69889d95a3add618c3a9f905f31c3157591db4a2342e6bf094?placeholderIfAbsent=true&apiKey=8da3fd6b121a4ce09e18e7d9dae826f0"
+          src="/icons/plus.svg"
           alt=""
           className="object-contain shrink-0 aspect-[1.38] w-[22px]"
         />
       </button>
+      <Toaster />
     </div>
   );
 };

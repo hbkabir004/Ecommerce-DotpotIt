@@ -1,0 +1,60 @@
+[{
+  "_id": {
+    "$oid": "670096efb61e3b26d7707164"
+  },
+  "image": "https://i.ibb.co.com/cTFNS3s/product-1.png",
+  "discount": "45%",
+  "icon": "https://i.ibb.co.com/bdFVcjt/location.jpg",
+  "name": "Thomas' Everything Bagels – 20oz_6ct",
+  "rating": 3,
+  "originalPrice": "4.50",
+  "discountedPrice": "2.50"
+},
+{
+  "_id": {
+    "$oid": "670096efb61e3b26d7707161"
+  },
+  "image": "https://i.ibb.co.com/fpMvDYN/product-2.jpg",
+  "discount": "45%",
+  "icon": "https://i.ibb.co.com/bdFVcjt/location.jpg",
+  "name": "California Pizza Kitchen Margherita",
+  "rating": 3,
+  "originalPrice": "4.50",
+  "discountedPrice": "2.50"
+},
+{
+  "_id": {
+    "$oid": "670096efb61e3b26d7707162"
+  },
+  "image": "https://i.ibb.co.com/TMk61rz/product-3.jpg",
+  "discount": "45%",
+  "icon": "https://i.ibb.co.com/bdFVcjt/location.jpg",
+  "name": "Simply Orange Pulp Free Juice – 52 fl oz",
+  "rating": 3,
+  "originalPrice": "4.50",
+  "discountedPrice": "2.50"
+},
+{
+  "_id": {
+    "$oid": "670096efb61e3b26d7707163"
+  },
+  "image": "https://i.ibb.co.com/ZNKtS4L/product-5.jpg",
+  "discount": "45%",
+  "icon": "https://i.ibb.co.com/bdFVcjt/location.jpg",
+  "name": "Angel Soft Toilet Paper, 9 Mega Rolls",
+  "rating": 3,
+  "originalPrice": "4.50",
+  "discountedPrice": "2.50"
+},
+{
+  "_id": {
+    "$oid": "670096efb61e3b26d7707165"
+  },
+  "image": "https://i.ibb.co.com/JdsW7Cm/product-6.jpg",
+  "discount": "45%",
+  "icon": "https://i.ibb.co.com/bdFVcjt/location.jpg",
+  "name": "Cantaloupe Melon Fresh Organic Cut",
+  "rating": 3,
+  "originalPrice": "4.50",
+  "discountedPrice": "2.50"
+}]

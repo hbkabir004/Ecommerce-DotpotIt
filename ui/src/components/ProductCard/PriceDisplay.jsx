@@ -3,14 +3,14 @@
  */
 import React from "react";
 
-function PriceDisplay({ currentPrice, originalPrice }) {
+function PriceDisplay({ currentPrice, discountedPrice }) {
   return (
     <div className="flex gap-2 self-start mt-5 tracking-tight whitespace-nowrap">
       <div className="grow text-2xl font-bold text-red-600">
         ${currentPrice.toFixed(2)}
       </div>
       <div className="text-base font-medium text-gray-900">
-        ${originalPrice.toFixed(2)}
+        ${discountedPrice.toFixed(2)}
       </div>
     </div>
   );

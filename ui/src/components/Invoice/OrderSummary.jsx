@@ -1,13 +1,20 @@
 import React from "react";
 
-function OrderSummary() {
-  const orderItems = [
-    {
-      name: "Marketside Fresh Organic Bananas, Bunch",
-      quantity: 1,
-      price: 0.89,
-    },
-  ];
+function OrderSummary({ selectedCart }) {
+  // const cartItems = useContext(CartContext);
+
+  console.log("FromOrderSummary=>", selectedCart);
+
+  const cartItems = selectedCart[0];
+  console.log("cartItems=>", cartItems);
+
+  // const orderItems = [
+  //   {
+  //     name: "Marketside Fresh Organic Bananas, Bunch",
+  //     quantity: 1,
+  //     price: 0.89,
+  //   },
+  // ];
 
   const shippingOptions = [
     { name: "Flat rate", price: 15.0 },
@@ -25,7 +32,7 @@ function OrderSummary() {
           <span className="text-right">Subtotal</span>
         </div>
 
-        {orderItems.map((item, index) => (
+        {cartItems.map((item, index) => (
           <div
             key={index}
             className="flex gap-5 justify-between py-3.5 tracking-tight border-b text-gray-950"
@@ -34,7 +41,7 @@ function OrderSummary() {
               {item.name} <span className="font-bold">× {item.quantity}</span>
             </div>
             <div className="my-auto text-sm text-right">
-              ${item.price.toFixed(2)}
+              ${Number(item.discountedPrice).toFixed(2)}
             </div>
           </div>
         ))}
@@ -43,8 +50,8 @@ function OrderSummary() {
           <span className="text-xs font-medium text-gray-400">Subtotal</span>
           <span className="text-sm text-right text-gray-950">
             $
-            {orderItems
-              .reduce((sum, item) => sum + item.price * item.quantity, 0)
+            {cartItems
+              .reduce((sum, item) => sum + Number(item.discountedPrice) * Number(item.quantity), 0)
               .toFixed(2)}
           </span>
         </div>
@@ -77,8 +84,8 @@ function OrderSummary() {
           <span className="text-sm font-bold text-right text-gray-950">
             $
             {(
-              orderItems.reduce(
-                (sum, item) => sum + item.price * item.quantity,
+              cartItems.reduce(
+                (sum, item) => sum + Number(item.discountedPrice) * Number(item.quantity),
                 0
               ) + shippingOptions[0].price
             ).toFixed(2)}

@@ -15,7 +15,7 @@ const EmptyCart = () => {
             </p>
             <Link to="/">
                 <button className="px-5 py-4 mt-5 max-w-full text-sm tracking-tight leading-3 text-white rounded-lg bg-neutral-800 w-[237px]">
-                    Return to shop
+                    Return to HOME
                 </button>
             </Link>
         </div>

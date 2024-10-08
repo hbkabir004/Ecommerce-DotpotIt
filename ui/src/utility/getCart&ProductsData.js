@@ -2,15 +2,13 @@ import axios from 'axios';
 import { getStoredCart } from './fakeDB';
 
 export const productsAndCartData = async () => {
-  // const [query, setQuery] = useContext(QueryContext);
   // Fetching Data from APIs
-  const productsData = await axios.get(`https://dotpot-user-auth.vercel.app/products`)
+  const productsData = await axios.get(`https://dotpot-user-auth.vercel.app/products`);
 
-  // Fetching Data from JSON (Local)
-  // const productsData = await fetch('data/products.json')
-  
   const products = productsData.data;
+  // console.log(`getCart&ProductsData=>${productsD}`);
   
+
   const savedCart = getStoredCart()
   const initialCart = []
   for (const id in savedCart) {

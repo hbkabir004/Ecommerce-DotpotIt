@@ -1,10 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
+import { CartContext } from "../../App";
 import BillingDetails from "./BillingDetails";
 import CouponBanner from "./CouponBanner";
 import OrderSummary from "./OrderSummary";
 import ProgressBar from "./ProgressBar";
 
-function CheckoutPage() {
+function InvoicePage() {
+  const selectedCart = useContext(CartContext);
+  selectedCart.pop();
+  console.log(selectedCart);
+
   return (
     <section className="px-72 mb-14">
       <div className="flex flex-col">
@@ -53,7 +58,7 @@ function CheckoutPage() {
               </div>
             </div>
 
-            <OrderSummary />
+            <OrderSummary selectedCart={selectedCart} />
           </div>
         </section>
       </div>
@@ -61,4 +66,4 @@ function CheckoutPage() {
   );
 }
 
-export default CheckoutPage;
+export default InvoicePage;

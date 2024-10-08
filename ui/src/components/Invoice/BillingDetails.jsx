@@ -8,33 +8,42 @@ function BillingDetails() {
           <h2 className="text-base font-bold tracking-tight leading-tight">
             Billing details
           </h2>
+
+        </div>
+
+      </div>
+      <div className="flex flex-wrap gap-5 self-stretch justify-between mt-2">
+
+        <div className="flex flex-col">
           <label
             htmlFor="firstName"
-            className="self-start mt-3.5 text-sm tracking-tight"
+            className=" self-start my-2 text-sm tracking-tight"
           >
             First name <span className="underline">*</span>
           </label>
+          <input
+            id="firstName"
+            type="text"
+            className="flex shrink-0 max-w-full h-11 bg-white rounded-lg border border-gray-300 border-solid shadow-[0px_1px_2px_rgba(0,0,0,0.047)] w-[410px]"
+            required
+          />
         </div>
-        <label
-          htmlFor="lastName"
-          className="self-end mt-7 text-sm tracking-tight"
-        >
-          Last name <span className="underline">*</span>
-        </label>
-      </div>
-      <div className="flex flex-wrap gap-5 self-stretch mt-2">
-        <input
-          id="firstName"
-          type="text"
-          className="flex shrink-0 max-w-full h-11 bg-white rounded-lg border border-gray-300 border-solid shadow-[0px_1px_2px_rgba(0,0,0,0.047)] w-[465px]"
-          required
-        />
-        <input
-          id="lastName"
-          type="text"
-          className="flex shrink-0 max-w-full h-11 bg-white rounded-lg border border-gray-300 border-solid shadow-[0px_1px_2px_rgba(0,0,0,0.047)] w-[465px]"
-          required
-        />
+
+        <div className="flex flex-col">
+          <label
+            htmlFor="lastName"
+            className="self-start my-2 text-sm tracking-tight"
+          >
+            Last name <span className="underline">*</span>
+          </label>
+          <input
+            id="lastName"
+            type="text"
+            className="flex shrink-0 max-w-full h-11 bg-white rounded-lg border border-gray-300 border-solid shadow-[0px_1px_2px_rgba(0,0,0,0.047)] w-[410px]"
+            required
+          />
+        </div>
+
       </div>
 
       <label
