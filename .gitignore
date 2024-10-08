@@ -8,6 +8,7 @@
 
 # Vercel Deployment files for both Client-side and Server-side
 /ui/.vercel
+/ui/.firebase
 /user-auth-backend/.vercel
 /user-auth-backend/vercel.json
 
@@ -36,3 +37,4 @@ Thumbs.db
 
 # Other
 *.local
+/dotpotitdb.products.json
