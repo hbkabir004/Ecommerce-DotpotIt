@@ -1,20 +1,9 @@
 import React from "react";
 
 function OrderSummary({ selectedCart }) {
-  // const cartItems = useContext(CartContext);
-
-  console.log("FromOrderSummary=>", selectedCart);
-
   const cartItems = selectedCart[0];
-  console.log("cartItems=>", cartItems);
 
-  // const orderItems = [
-  //   {
-  //     name: "Marketside Fresh Organic Bananas, Bunch",
-  //     quantity: 1,
-  //     price: 0.89,
-  //   },
-  // ];
+  const subTotal = cartItems.reduce((sum, item) => sum + Number(item.discountedPrice) * Number(item.quantity), 0).toFixed(2);
 
   const shippingOptions = [
     { name: "Flat rate", price: 15.0 },
@@ -49,10 +38,7 @@ function OrderSummary({ selectedCart }) {
         <div className="flex gap-5 justify-between py-4 tracking-tight whitespace-nowrap border-b">
           <span className="text-xs font-medium text-gray-400">Subtotal</span>
           <span className="text-sm text-right text-gray-950">
-            $
-            {cartItems
-              .reduce((sum, item) => sum + Number(item.discountedPrice) * Number(item.quantity), 0)
-              .toFixed(2)}
+            ${subTotal}
           </span>
         </div>
 

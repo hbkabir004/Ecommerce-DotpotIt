@@ -1,9 +1,14 @@
+import { Elements } from "@stripe/react-stripe-js";
+import { loadStripe } from "@stripe/stripe-js";
 import React, { useContext } from "react";
 import { CartContext } from "../../App";
 import BillingDetails from "./BillingDetails";
-import CouponBanner from "./CouponBanner";
 import OrderSummary from "./OrderSummary";
-import ProgressBar from "./ProgressBar";
+import StripeCheckoutForm from "./StripeCheckoutForm";
+
+// Make sure to call `loadStripe` outside of a component’s render to avoid
+// recreating the `Stripe` object on every render.
+const stripePromise = loadStripe(import.meta.env.VITE_STRIPE_PUBLISHABLE_KEY);
 
 function InvoicePage() {
   const selectedCart = useContext(CartContext);
@@ -24,7 +29,19 @@ function InvoicePage() {
           <span className="text-gray-950">Checkout</span>
         </nav>
 
-        <CouponBanner />
+        {/* <CouponBanner /> */}
+        <div className="flex flex-wrap gap-1.5 px-5 py-5 mt-6 text-sm tracking-tight leading-normal bg-neutral-100 text-zinc-800 max-md:max-w-full">
+          <img
+            loading="lazy"
+            src="/icons/coupon.svg"
+            className="object-contain shrink-0 my-auto aspect-square w-[15px]"
+            alt=""
+          />
+          <div className="grow px-4 py-5 border border-solid w-fit max-md:pr-5 max-md:max-w-full">
+            Have a coupon?{" "}
+            <span className="text-gray-950">Click here to enter your code</span>
+          </div>
+        </div>
 
         <section className="mt-8 w-full max-md:max-w-full">
           <div className="flex gap-5 max-md:flex-col">
@@ -51,7 +68,10 @@ function InvoicePage() {
                       </span>
                     </div>
                   </div>
-                  <ProgressBar />
+                  {/* <ProgressBar /> */}
+                  <div className="flex overflow-hidden flex-col mt-4 bg-red-100 max-md:max-w-full">
+                    <div className="flex shrink-0 rounded-xl bg-black bg-opacity-10 h-[5px] max-md:max-w-full" />
+                  </div>
                 </div>
 
                 <BillingDetails />
@@ -61,6 +81,9 @@ function InvoicePage() {
             <OrderSummary selectedCart={selectedCart} />
           </div>
         </section>
+        <Elements stripe={stripePromise}>
+          <StripeCheckoutForm cartProducts={selectedCart} description="Invoice Payment" />
+        </Elements>
       </div>
     </section>
   );
