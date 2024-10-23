@@ -1,5 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import App from "../App";
+import SingleProduct from "../components/AllProducts/SingleProduct";
 import CartPage from "../components/Cart/CartPage";
 import InvoicePage from "../components/Invoice/InvoicePage";
 import LoginForm from "../components/LoginForm";
@@ -17,6 +18,11 @@ const Router = createBrowserRouter([
             {
                 path: "/",
                 element: <HomePage />,
+            },
+            {
+                path: "/products/:_id",
+                element: <SingleProduct />,
+                loader: ({ params }) => fetch(`http://localhost:5000/products/${params._id}`)
             },
             {
                 path: "myaccount",

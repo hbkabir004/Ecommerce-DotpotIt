@@ -1,45 +1,81 @@
-import React from "react";
+import html2pdf from "html2pdf.js";
+import React, { useRef, useState } from "react";
 
 function OrderSummary({ selectedCart }) {
   const cartItems = selectedCart[0];
+  const [isAgreed, setIsAgreed] = useState(false); // Track checkbox state
 
-  const subTotal = cartItems.reduce((sum, item) => sum + Number(item.discountedPrice) * Number(item.quantity), 0).toFixed(2);
+  const invoiceRef = useRef(); // Reference to the invoice content
+
+  const subTotal = cartItems
+    .reduce((sum, item) => sum + Number(item.discountedPrice) * Number(item.quantity), 0)
+    .toFixed(2);
 
   const shippingOptions = [
     { name: "Flat rate", price: 15.0 },
     { name: "Local pickup", price: 0 },
   ];
 
+  const isCartEmpty = cartItems.length === 0; // Check if cart is empty
+
+  const handleAgreementChange = (e) => {
+    setIsAgreed(e.target.checked);
+  };
+
+  const isButtonDisabled = isCartEmpty || !isAgreed; // Button disabled condition
+
+  const generatePDF = () => {
+    const element = invoiceRef.current; // Get the invoice content
+    const options = {
+      filename: `invoice_${new Date().toISOString()}.pdf`,
+      jsPDF: { unit: "pt", format: "a4" },
+    };
+
+    // Generate PDF and open in new tab
+    html2pdf()
+      .from(element)
+      .set(options)
+      .output("bloburl")
+      .then((pdfUrl) => {
+        window.open(pdfUrl); // Open the generated PDF in a new tab
+      });
+  };
+
   return (
     <aside className="flex flex-col ml-5 w-[29%] max-md:ml-0 max-md:w-full">
-      <div className="flex flex-col px-5 py-6 mx-auto w-full rounded-md border border-solid bg-black bg-opacity-0 max-md:px-5 max-md:mt-8">
+      <div ref={invoiceRef} className="flex flex-col px-5 py-6 mx-auto w-full rounded-md border border-solid bg-black bg-opacity-0 max-md:px-5 max-md:mt-8">
         <h2 className="self-start text-base font-semibold tracking-tight leading-tight text-gray-950">
           Your order
         </h2>
-        <div className="flex gap-5 justify-between py-4 mt-3 text-xs font-medium tracking-tight text-gray-400 whitespace-nowrap border-b">
-          <span>Product</span>
-          <span className="text-right">Subtotal</span>
-        </div>
 
-        {cartItems.map((item, index) => (
-          <div
-            key={index}
-            className="flex gap-5 justify-between py-3.5 tracking-tight border-b text-gray-950"
-          >
-            <div className="text-xs leading-5">
-              {item.name} <span className="font-bold">× {item.quantity}</span>
+        {isCartEmpty ? (
+          <p className="text-red-600 mt-4">Your cart is empty.</p>
+        ) : (
+          <>
+            <div className="flex gap-5 justify-between py-4 mt-3 text-xs font-medium tracking-tight text-gray-400 whitespace-nowrap border-b">
+              <span>Product</span>
+              <span className="text-right">Subtotal</span>
             </div>
-            <div className="my-auto text-sm text-right">
-              ${Number(item.discountedPrice).toFixed(2)}
-            </div>
-          </div>
-        ))}
+
+            {cartItems.map((item, index) => (
+              <div
+                key={index}
+                className="flex gap-5 justify-between py-3.5 tracking-tight border-b text-gray-950"
+              >
+                <div className="text-xs leading-5">
+                  {item.name} <span className="font-bold">× {item.quantity}</span>
+                </div>
+                <div className="my-auto text-sm text-right">
+                  ${Number(item.discountedPrice).toFixed(2)}
+                </div>
+              </div>
+            ))}
+          </>
+        )}
 
         <div className="flex gap-5 justify-between py-4 tracking-tight whitespace-nowrap border-b">
           <span className="text-xs font-medium text-gray-400">Subtotal</span>
-          <span className="text-sm text-right text-gray-950">
-            ${subTotal}
-          </span>
+          <span className="text-sm text-right text-gray-950">${subTotal}</span>
         </div>
 
         <div className="flex gap-5 justify-between py-3.5 border-b">
@@ -124,21 +160,12 @@ function OrderSummary({ selectedCart }) {
           </label>
         </div>
 
-        <p className="mt-8 text-sm tracking-tight leading-5 text-gray-500 max-md:mr-1.5">
-          Your personal data will be used to process your order, support your
-          experience throughout this website, and for other purposes described
-          in our{" "}
-          <a href="#" className="font-medium text-gray-700 underline">
-            privacy policy
-          </a>
-          .
-        </p>
-
-        <div className="flex gap-2 items-center mt-5">
+        <div className="flex gap-2 items-center mt-6">
           <input
             type="checkbox"
             id="termsAgreement"
             className="flex shrink-0 w-4 h-4 bg-white rounded border border-gray-300 border-solid shadow-[0px_1px_2px_rgba(0,0,0,0.047)]"
+            onChange={handleAgreementChange}
             required
           />
           <label
@@ -154,10 +181,13 @@ function OrderSummary({ selectedCart }) {
         </div>
 
         <button
+          onClick={generatePDF}
           type="submit"
-          className="px-16 py-5 mt-3.5 text-sm font-bold tracking-tight leading-3 text-center text-white bg-purple-800 rounded-lg max-md:px-5"
+          className={`px-16 py-5 mt-3.5 text-sm font-bold tracking-tight leading-3 text-center text-white rounded-lg max-md:px-5 ${isButtonDisabled ? "bg-gray-400 cursor-not-allowed" : "bg-purple-800"
+            }`}
+          disabled={isButtonDisabled}
         >
-          Place order
+          Place Order
         </button>
       </div>
     </aside>

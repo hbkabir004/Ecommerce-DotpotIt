@@ -1,37 +1,41 @@
 import React from "react";
 import { Toaster } from "react-hot-toast";
+import { Link } from "react-router-dom";
 import StarRating from "./StarRating";
 
 const ProductCard = ({ productItem, handleAddToCart }) => {
 
-  const { image, discount, icon, name, rating, originalPrice, discountedPrice } = productItem;
+  const { image, discount, icon, name, rating, originalPrice, discountedPrice, _id } = productItem;
   // const notify = toast
 
   return (
+
     <div className="flex flex-col items-start px-4 pb-4 w-full border border-r max-md:mt-4 rounded-xl">
       <div className="flex overflow-hidden flex-col py-1 mb-2 w-full text-xs font-extrabold tracking-tight text-center text-red-50 uppercase">
-        <img
-          loading="lazy"
-          src={image}
-          alt={name}
-          className="object-cover inset-0 size-full"
-        />
+        <Link to={`/products/${_id}`}>
+          <img
+            loading="lazy"
+            src={image}
+            alt={name}
+            className="object-cover inset-0 size-full"
+          />
 
-        <div className="flex relative z-10 gap-8 self-start mt-0 max-md:mr-0">
-          {discount && (
-            <div className="p-2.5 my-auto bg-red-600 rounded-2xl">
-              {discount}
-            </div>
-          )}
-          {icon && (
-            <img
-              loading="lazy"
-              src={icon}
-              alt=""
-              className="object-contain shrink-0 w-8 rounded-2xl aspect-square"
-            />
-          )}
-        </div>
+          <div className="flex relative z-10 gap-8 self-start mt-0 max-md:mr-0">
+            {discount && (
+              <div className="p-2.5 my-auto bg-red-600 rounded-2xl">
+                {discount}
+              </div>
+            )}
+            {icon && (
+              <img
+                loading="lazy"
+                src={icon}
+                alt=""
+                className="object-contain shrink-0 w-8 rounded-2xl aspect-square"
+              />
+            )}
+          </div>
+        </Link>
       </div>
 
       <h2 className="text-lg font-semibold tracking-tight leading-5 text-gray-950">
