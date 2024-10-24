@@ -33,7 +33,7 @@ const StripeCheckoutForm = ({ cartProducts, description }) => {
             }
 
             // Call your backend to handle the payment intent creation
-            const response = await fetch('http://localhost:5000/create-payment-intent', {
+            const response = await fetch('https://dotpot-user-auth.vercel.app/create-payment-intent', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ amount: 5000 }), // Example payload

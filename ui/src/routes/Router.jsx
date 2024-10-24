@@ -22,7 +22,7 @@ const Router = createBrowserRouter([
             {
                 path: "/products/:_id",
                 element: <SingleProduct />,
-                loader: ({ params }) => fetch(`http://localhost:5000/products/${params._id}`)
+                loader: ({ params }) => fetch(`https://dotpot-user-auth.vercel.app/products/${params._id}`)
             },
             {
                 path: "myaccount",
