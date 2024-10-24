@@ -4,15 +4,9 @@ const connectDB = require('./config/db');
 const userRoutes = require('./routes/userRoutes');
 const productRoutes = require('./routes/productRoutes');
 const singleProductRoute = require('./routes/singleProductRoute');
-const paymentRoutes = require('./routes/paymentRoutes');
-const historyRoutes = require('./routes/historyRoutes');
 const Stripe = require('stripe');
 const cors = require('cors');
-
 const app = express();
-
-// const Stripe = require('stripe');
-// const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
 
 app.get('/', (req, res) => {
@@ -27,8 +21,6 @@ connectDB();
 app.use('/api', userRoutes);
 app.use('/products', productRoutes);
 app.use('/products', singleProductRoute);
-// app.use('/create-payment-intent', paymentRoutes)
-// app.use('/payment-history', historyRoutes)
 
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
