@@ -3,6 +3,7 @@ const express = require('express');
 const connectDB = require('./config/db');
 const userRoutes = require('./routes/userRoutes');
 const productRoutes = require('./routes/productRoutes');
+const singleProductRoute = require('./routes/singleProductRoute');
 const paymentRoutes = require('./routes/paymentRoutes');
 const historyRoutes = require('./routes/historyRoutes');
 const Stripe = require('stripe');
@@ -18,15 +19,14 @@ app.get('/', (req, res) => {
   res.send('Stripe integration working!');
 });
 // Middleware
-// app.use(cors());
-// app.use(express.json());
 app.use(cors({ origin: 'http://localhost:5173' }));
 app.use(express.json());
 
 connectDB();
 
 app.use('/api', userRoutes);
-app.use('/products', productRoutes)
+app.use('/products', productRoutes);
+app.use('/products', singleProductRoute);
 // app.use('/create-payment-intent', paymentRoutes)
 // app.use('/payment-history', historyRoutes)
 
